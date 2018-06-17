@@ -12,23 +12,23 @@ Now you need to verify that you have the correct `bash` configurations in place.
 
 Change to your home directory
 
-`cd ~`
+> `cd ~`
 
 Make sure you have a ~/.profile
 
-`touch ~/.profile`
+> `touch ~/.profile`
 
 Prefer ~/.profile over ~/.bash_profile
 
-`[[ -f ~/.bash_profile ]] && cat ~/.bash_profile >> ~/.profile && rm -f ~/.bash_profile`
+> `[[ -f ~/.bash_profile ]] && cat ~/.bash_profile >> ~/.profile && rm -f ~/.bash_profile`
 
 Make sure you have a ~/.bashrc
 
-`touch ~/.bashrc`
+> `touch ~/.bashrc`
 
 Make sure ~/.bashrc is being sourced in ~/.profile
 
-`echo 'source ~/.bashrc' >> ~/.profile`
+> `echo 'source ~/.bashrc' >> ~/.profile`
 
 
 
@@ -36,8 +36,8 @@ Make sure ~/.bashrc is being sourced in ~/.profile
 
 Homebrew, by default, installs to /usr/local. Run these commands if you are going to use the default. **DO NOT run these commands if you are customizing the install location**
 
-`sudo mkdir -p /usr/local`
-`sudo chown -R $(whoami):admin /usr/local/`
+ `sudo mkdir -p /usr/local`
+ `sudo chown -R $(whoami):admin /usr/local/`
 
 Install Homebrew
 
