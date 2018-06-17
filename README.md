@@ -30,6 +30,7 @@ Make sure ~/.bashrc is being sourced in ~/.profile
 
 Homebrew, by default, installs to /usr/local. Run these commands if you are going to use the default. **DO NOT run these commands if you are customizing the install location**
 > `sudo mkdir -p /usr/local`
+
 > `sudo chown -R $(whoami):admin /usr/local/`
 
 Install Homebrew
