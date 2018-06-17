@@ -35,20 +35,23 @@ Make sure ~/.bashrc is being sourced in ~/.profile
 ## INSTALL HOMEBREW & PYTHON
 
 Install Homebrew
+
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 Get Homebrew-Cask
+
 `brew tap caskroom/cask`
 
 Install Python 3
+
 `homebrew install python3`
 
-
-
 Add Python tools to PATH in ~/.bashrc
+
 `echo 'export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}' >> ~/.bashrc`
 
 Source ~/.bashrc for the update to take effect
+
 `source ~/.bashrc`
 
 
