@@ -65,9 +65,15 @@ Install pip (pip3) for python3
 > `python3 ./get-pip.py --trusted-host pypi.org --trusted-host files.pythonhosted.org`
 > `rm -f ./get-pip.py`
 
-Install Xcode Command Line Tools -- https://developer.apple.com/library/content/technotes/tn2339/_index.html
 
+
+## INSTALL NODE
+
+Install Xcode Command Line Tools -- https://developer.apple.com/library/content/technotes/tn2339/_index.html
 > `xcode-select --install`
+
+Install NVM
+> ``
 
 
 ## APPLICATIONS
@@ -99,14 +105,49 @@ Optional, setup github ssh keys
     
 - Download and install the latest Oracle JDK8 version for macOS from here http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
+#### nvm
+
+> https://github.com/creationix/nvm
+> `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
+
 #### NodeJS 8.x
 
 If you use Node Version Manager(nvm), it does not make a node binary available on the PATH by default.
 Download and install the latest 6.x version from here https://nodejs.org/en/download/
 
-#### nvm
+> `nvm install node`
 
-> https://github.com/creationix/nvm
+
+# NVM
+
+List your installed node versions:
+> `nvm list`
+
+List the available node versions in the cloud:
+> `nvm ls-remote`
+
+You can use the combination of this two commands to see only the last 9 lines from the huge list of versions: `nvm ls-remote | tail -n9`
+
+It is safe if you choose one of the most recent LTS (long time support) version and install it with the following command:
+> `nvm install 10.3.0`
+
+Setup this version as the default.
+> `nvm use 10.3.0`
+> `nvm alias default 10.3.0`
+
+Check your node version with
+> `node -v`
+
+You can update your npm to the latest.
+> `npm install -g npm`
+> After the update, the npm version, npm -v, should be at least 6.1.0 or above.
+
+A little extra tip. Remember for the following command because it simplifies the update process. ;)
+
+Let’s say, you would like to stay on the stable, LTS version and you would like to keep all the global package what you’ve already installed. Here is the solution:
+> `nvm install 8 --reinstall-packages-from=8 --latest-npm`
+> It updates your Node.js version to the latest version 8 and install the latest npm, plus it setup all your previously installed global packages.
+
 
 
 
@@ -119,11 +160,10 @@ Update Homebrew
 Upgrade pip3
 `pip3 install --upgrade pip setuptools wheel --trusted-host pypi.org --trusted-host files.pythonhosted.org`
 
-Upgrade Node
-`here`
+Upgrade Node & npm
+`brew upgrade node && npm install -g npm`
 
-Upgrade npm
-`npm install npm@latest -g`
-
+Clean npm cache
+`sudo npm cache clean -f`
 
 
