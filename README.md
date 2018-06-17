@@ -32,7 +32,6 @@ Make sure ~/.bashrc is being sourced in ~/.profile
 
 Homebrew, by default, installs to /usr/local. Run these commands if you are going to use the default. **DO NOT run these commands if you are customizing the install location**
 - `sudo mkdir -p /usr/local`
-
 - `sudo chown -R $(whoami):admin /usr/local/`
 
 Install Homebrew
@@ -60,15 +59,18 @@ Install pip (pip3) for python3
 
 #### nvm
 
-> https://github.com/creationix/nvm
-> `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
+- https://github.com/creationix/nvm
+- `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
+
+Source ~/.bashrc for the update to take effect
+- `source ~/.bashrc`
 
 #### NodeJS 8.x
 
 If you use Node Version Manager(nvm), it does not make a node binary available on the PATH by default.
 Download and install the latest 6.x version from here https://nodejs.org/en/download/
 
-> `nvm install node`
+- `nvm install node`
 
 #### Java9 (Optional???)
     
