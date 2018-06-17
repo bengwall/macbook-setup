@@ -1,29 +1,49 @@
 # Mac Setup
 
-## Shell
+## INSTALL & SETUP BASH SHELL
 
 Run the following command to change/verify that you are using Bash.
-
 `chsh -s /bin/bash`
 
 You will need to quit and re-launch your Terminal for the shell change to take effect.
 
 Now you need to verify that you have the correct `bash` configurations in place.
 
-### Change to your home directory
+Change to your home directory
 `cd ~`
 
-### Make sure you have a ~/.profile
+Make sure you have a ~/.profile
 `touch ~/.profile`
 
-### Prefer ~/.profile over ~/.bash_profile
-[[ -f ~/.bash_profile ]] && cat ~/.bash_profile >> ~/.profile && rm -f ~/.bash_profile
+Prefer ~/.profile over ~/.bash_profile
+`[[ -f ~/.bash_profile ]] && cat ~/.bash_profile >> ~/.profile && rm -f ~/.bash_profile`
 
-### Make sure you have a ~/.bashrc
+Make sure you have a ~/.bashrc
 `touch ~/.bashrc`
 
-### Make sure ~/.bashrc is being sourced in ~/.profile
+Make sure ~/.bashrc is being sourced in ~/.profile
 `echo 'source ~/.bashrc' >> ~/.profile`
+
+
+
+## INSTALL HOMEBREW & PYTHON
+
+Install Homebrew
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+Get Homebrew-Cask
+`brew tap caskroom/cask`
+
+Install Python 3
+`homebrew install python3`
+
+
+
+Add Python tools to PATH in ~/.bashrc
+`echo 'export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}' >> ~/.bashrc`
+
+Source ~/.bashrc for the update to take effect
+`source ~/.bashrc`
 
 
 
@@ -48,17 +68,7 @@ Install VSCode -- https://code.visualstudio.com/docs/setup/mac
 Install Xcode Command Line Tools -- https://developer.apple.com/library/content/technotes/tn2339/_index.html
     - `xcode-select --install`
     
-    
-Python 3.6
-macOS ships with Python2.7. We will be using Python3.6. Download and install Python3.6 for macOS from here https://www.python.org/downloads/mac-osx/
-
-Once the installation is complete, you need to add the Python Packages to your PATH
-
-# Add Python tools to PATH in ~/.bashrc
-echo 'export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}' >> ~/.bashrc
-
-# Source ~/.bashrc for the update to take effect
-source ~/.bashrc
+   
 
 Java8
 Download and install the latest Oracle JDK8 version for macOS from here http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
@@ -101,8 +111,11 @@ sudo chown -R $(whoami):admin /usr/local/
 #   Don't change them unless you really know what you are doing
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+
+
+# MAINTENANCE
+
 # Update Homebrew
 brew update
 
-# Get Homebrew-Cask
-brew tap caskroom/cask
+
