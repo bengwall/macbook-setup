@@ -1,6 +1,6 @@
-Mac Setup
+# Mac Setup
 
-### Shell
+## Shell
 
 Run the following command to change/verify that you are using Bash.
 
@@ -10,24 +10,24 @@ You will need to quit and re-launch your Terminal for the shell change to take e
 
 Now you need to verify that you have the correct `bash` configurations in place.
 
-# Change to your home directory
+### Change to your home directory
 `cd ~`
 
-# Make sure you have a ~/.profile
+### Make sure you have a ~/.profile
 `touch ~/.profile`
 
-# Prefer ~/.profile over ~/.bash_profile
+### Prefer ~/.profile over ~/.bash_profile
 [[ -f ~/.bash_profile ]] && cat ~/.bash_profile >> ~/.profile && rm -f ~/.bash_profile
 
-# Make sure you have a ~/.bashrc
+### Make sure you have a ~/.bashrc
 `touch ~/.bashrc`
 
-# Make sure ~/.bashrc is being sourced in ~/.profile
+### Make sure ~/.bashrc is being sourced in ~/.profile
 `echo 'source ~/.bashrc' >> ~/.profile`
 
 
 
-### Languages and Compilers
+## Languages and Compilers
 
 iTerm2
 
@@ -36,7 +36,12 @@ SourceTree
 
 
 Install VSCode -- https://code.visualstudio.com/docs/setup/mac
-    - Install ability to open Code in terminal
+    - Install ability to open Code in terminal https://code.visualstudio.com/docs/setup/mac 
+    - Install plugins
+        - Angular Essentials Pack (John Papa's collection for Angular dev)
+        - ESLint
+        - VSCode Great Icons
+        
 
 Install Xcode Command Line Tools -- https://developer.apple.com/library/content/technotes/tn2339/_index.html
     - `xcode-select --install`
