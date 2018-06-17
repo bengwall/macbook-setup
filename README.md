@@ -4,7 +4,7 @@
 
 Run the following command to change/verify that you are using Bash.
 
-`chsh -s /bin/bash`
+> `chsh -s /bin/bash`
 
 You will need to quit and re-launch your Terminal for the shell change to take effect.
 
