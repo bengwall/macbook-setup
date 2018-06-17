@@ -43,7 +43,8 @@ Get Homebrew-Cask
 #### Python
 
 Install Python 3
-- `homebrew install python3`
+- `brew install python3`
+- If you get an errors that `brew` cannot be found, then run this to update the patch `export PATH=/usr/local/bin:$PATH`, then reload bash `source ~/.bashrc`.
 
 Add Python tools to PATH in ~/.bashrc
 - `echo 'export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}' >> ~/.bashrc`
