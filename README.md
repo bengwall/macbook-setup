@@ -66,12 +66,13 @@ Install pip (pip3) for python3
 Source ~/.bashrc for the update to take effect
 - `source ~/.bashrc`
 
-#### NodeJS 8.x
+#### NodeJS 8.10.0 (AWS version)
 
 If you use Node Version Manager(nvm), it does not make a node binary available on the PATH by default.
 Download and install the latest 6.x version from here https://nodejs.org/en/download/
 
-- `nvm install node`
+- `nvm install 8.10.0`
+- `npm install -g npm`
 
 #### Java9 (Optional???)
     
