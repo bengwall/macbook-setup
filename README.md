@@ -31,9 +31,11 @@ Now you need to verify that you have the correct `bash` configurations in place.
 
 iTerm2
 
+Git for Mac
+
 SourceTree
 - setup github ssh keys
-
+    - https://help.github.com/articles/connecting-to-github-with-ssh/
 
 Install VSCode -- https://code.visualstudio.com/docs/setup/mac
     - Install ability to open Code in terminal https://code.visualstudio.com/docs/setup/mac 
