@@ -1,14 +1,101 @@
 Mac Setup
 
+### Shell
+
+Run the following command to change/verify that you are using Bash.
+
+`chsh -s /bin/bash`
+
+You will need to quit and re-launch your Terminal for the shell change to take effect.
+
+Now you need to verify that you have the correct `bash` configurations in place.
+
+# Change to your home directory
+`cd ~`
+
+# Make sure you have a ~/.profile
+`touch ~/.profile`
+
+# Prefer ~/.profile over ~/.bash_profile
+[[ -f ~/.bash_profile ]] && cat ~/.bash_profile >> ~/.profile && rm -f ~/.bash_profile
+
+# Make sure you have a ~/.bashrc
+`touch ~/.bashrc`
+
+# Make sure ~/.bashrc is being sourced in ~/.profile
+`echo 'source ~/.bashrc' >> ~/.profile`
 
 
-- VS Code
 
-- SourceTree
-- Python
-    - https://www.python.org/downloads/mac-osx
-    - Add Python tools to PATH in ~/bashrc
-        - $ echo ‘export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}
-    - Source ~/.bachrc for the update to take effect
-        - $ source ~/.bachrc
-Setup up code to run on command line
+### Languages and Compilers
+
+iTerm2
+
+SourceTree
+- setup github ssh keys
+
+
+Install VSCode -- https://code.visualstudio.com/docs/setup/mac
+    - Install ability to open Code in terminal
+
+Install Xcode Command Line Tools -- https://developer.apple.com/library/content/technotes/tn2339/_index.html
+    - `xcode-select --install`
+    
+    
+Python 3.6
+macOS ships with Python2.7. We will be using Python3.6. Download and install Python3.6 for macOS from here https://www.python.org/downloads/mac-osx/
+
+Once the installation is complete, you need to add the Python Packages to your PATH
+
+# Add Python tools to PATH in ~/.bashrc
+echo 'export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}' >> ~/.bashrc
+
+# Source ~/.bashrc for the update to take effect
+source ~/.bashrc
+
+Java8
+Download and install the latest Oracle JDK8 version for macOS from here http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+NodeJS 8.x
+If you use Node Version Manager(nvm), it does not make a node binary available on the PATH by default.
+Download and install the latest 6.x version from here https://nodejs.org/en/download/
+
+nvm
+https://github.com/creationix/nvm
+
+
+
+
+### Install and Configure Package Managers
+
+Install PIP for Python3 Packages
+# Install pip (pip3) for python3
+cd ~/Downloads
+curl -Lks -o ./get-pip.py -- https://bootstrap.pypa.io/get-pip.py
+python3 ./get-pip.py --trusted-host pypi.org --trusted-host files.pythonhosted.org
+rm -f ./get-pip.py
+
+# Upgrade pip3
+pip3 install --upgrade pip setuptools wheel --trusted-host pypi.org --trusted-host files.pythonhosted.org
+Install NPM for NodeJS
+# npm is already installed with NodeJS
+#   upgrade it
+npm install npm@latest -g
+Install Homebrew
+
+# Homebrew, by default, installs to /usr/local
+# Run these commands if you are going to use the default
+# DO NOT run these commands if you are customizing the install location
+sudo mkdir -p /usr/local
+sudo chown -R $(whoami):admin /usr/local/
+
+# Install Homebrew
+#   The defaults are what is recommended.
+#   Don't change them unless you really know what you are doing
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Update Homebrew
+brew update
+
+# Get Homebrew-Cask
+brew tap caskroom/cask
