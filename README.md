@@ -34,6 +34,11 @@ Make sure ~/.bashrc is being sourced in ~/.profile
 
 ## INSTALL HOMEBREW & PYTHON
 
+Homebrew, by default, installs to /usr/local. Run these commands if you are going to use the default. **DO NOT run these commands if you are customizing the install location**
+
+`sudo mkdir -p /usr/local`
+`sudo chown -R $(whoami):admin /usr/local/`
+
 Install Homebrew
 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
@@ -54,77 +59,72 @@ Source ~/.bashrc for the update to take effect
 
 `source ~/.bashrc`
 
+Install pip (pip3) for python3
 
-
-## Languages and Compilers
-
-iTerm2
-
-Git for Mac
-
-SourceTree
-- setup github ssh keys
-    - https://help.github.com/articles/connecting-to-github-with-ssh/
-
-Install VSCode -- https://code.visualstudio.com/docs/setup/mac
-    - Install ability to open Code in terminal https://code.visualstudio.com/docs/setup/mac 
-    - Install plugins
-        - Angular Essentials Pack (John Papa's collection for Angular dev)
-        - ESLint
-        - VSCode Great Icons
-        
+`cd ~/Downloads`
+`curl -Lks -o ./get-pip.py -- https://bootstrap.pypa.io/get-pip.py`
+`python3 ./get-pip.py --trusted-host pypi.org --trusted-host files.pythonhosted.org`
+`rm -f ./get-pip.py`
 
 Install Xcode Command Line Tools -- https://developer.apple.com/library/content/technotes/tn2339/_index.html
-    - `xcode-select --install`
+
+`xcode-select --install`
+
+
+## APPLICATIONS
+
+#### iTerm2
+
+#### SourceTree
+
+Optional, setup github ssh keys
+
+`https://help.github.com/articles/connecting-to-github-with-ssh/`
+
+#### Git for Mac
+
+(Source tree will prompt you to install it)
+
+#### VSCode
+
+`https://code.visualstudio.com/docs/setup/mac`
+
+ - Install ability to open Code in terminal https://code.visualstudio.com/docs/setup/mac 
+ - Install plugins
+    - Angular Essentials Pack (John Papa's collection for Angular dev)
+    - ESLint
+    - VSCode Great Icons
+    - Python
+        
+#### Java9 (Optional???)
     
-   
+- Download and install the latest Oracle JDK8 version for macOS from here http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
-Java8
-Download and install the latest Oracle JDK8 version for macOS from here http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+#### NodeJS 8.x
 
-NodeJS 8.x
 If you use Node Version Manager(nvm), it does not make a node binary available on the PATH by default.
 Download and install the latest 6.x version from here https://nodejs.org/en/download/
 
-nvm
+#### nvm
+
 https://github.com/creationix/nvm
 
 
 
 
-### Install and Configure Package Managers
-
-Install PIP for Python3 Packages
-# Install pip (pip3) for python3
-cd ~/Downloads
-curl -Lks -o ./get-pip.py -- https://bootstrap.pypa.io/get-pip.py
-python3 ./get-pip.py --trusted-host pypi.org --trusted-host files.pythonhosted.org
-rm -f ./get-pip.py
-
-# Upgrade pip3
-pip3 install --upgrade pip setuptools wheel --trusted-host pypi.org --trusted-host files.pythonhosted.org
-Install NPM for NodeJS
-# npm is already installed with NodeJS
-#   upgrade it
-npm install npm@latest -g
-Install Homebrew
-
-# Homebrew, by default, installs to /usr/local
-# Run these commands if you are going to use the default
-# DO NOT run these commands if you are customizing the install location
-sudo mkdir -p /usr/local
-sudo chown -R $(whoami):admin /usr/local/
-
-# Install Homebrew
-#   The defaults are what is recommended.
-#   Don't change them unless you really know what you are doing
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-
-
 # MAINTENANCE
 
-# Update Homebrew
-brew update
+Update Homebrew
+`brew update && brew upgrade && brew cleanup`
+
+Upgrade pip3
+`pip3 install --upgrade pip setuptools wheel --trusted-host pypi.org --trusted-host files.pythonhosted.org`
+
+Upgrade Node
+`here`
+
+Upgrade npm
+`npm install npm@latest -g`
+
 
 
