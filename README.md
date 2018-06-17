@@ -3,7 +3,6 @@
 ## INSTALL & SETUP BASH SHELL
 
 Run the following command to change/verify that you are using Bash.
-
 > `chsh -s /bin/bash`
 
 You will need to quit and re-launch your Terminal for the shell change to take effect.
@@ -11,23 +10,18 @@ You will need to quit and re-launch your Terminal for the shell change to take e
 Now you need to verify that you have the correct `bash` configurations in place.
 
 Change to your home directory
-
 > `cd ~`
 
 Make sure you have a ~/.profile
-
 > `touch ~/.profile`
 
 Prefer ~/.profile over ~/.bash_profile
-
 > `[[ -f ~/.bash_profile ]] && cat ~/.bash_profile >> ~/.profile && rm -f ~/.bash_profile`
 
 Make sure you have a ~/.bashrc
-
 > `touch ~/.bashrc`
 
 Make sure ~/.bashrc is being sourced in ~/.profile
-
 > `echo 'source ~/.bashrc' >> ~/.profile`
 
 
@@ -39,27 +33,21 @@ Homebrew, by default, installs to /usr/local. Run these commands if you are goin
 > `sudo chown -R $(whoami):admin /usr/local/`
 
 Install Homebrew
-
 > `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 Get Homebrew-Cask
-
 > `brew tap caskroom/cask`
 
 Install Python 3
-
 > `homebrew install python3`
 
 Add Python tools to PATH in ~/.bashrc
-
 > `echo 'export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}' >> ~/.bashrc`
 
 Source ~/.bashrc for the update to take effect
-
 > `source ~/.bashrc`
 
 Install pip (pip3) for python3
-
 > `cd ~/Downloads`
 > `curl -Lks -o ./get-pip.py -- https://bootstrap.pypa.io/get-pip.py`
 > `python3 ./get-pip.py --trusted-host pypi.org --trusted-host files.pythonhosted.org`
@@ -159,9 +147,6 @@ Update Homebrew
 
 Upgrade pip3
 `pip3 install --upgrade pip setuptools wheel --trusted-host pypi.org --trusted-host files.pythonhosted.org`
-
-Upgrade Node & npm
-`brew upgrade node && npm install -g npm`
 
 Clean npm cache
 `sudo npm cache clean -f`
